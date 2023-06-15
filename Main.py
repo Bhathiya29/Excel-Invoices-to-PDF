@@ -45,7 +45,7 @@ for filePath in filePaths:
         pdf.cell(w=70, h=8, txt=str(row['product_name']), border=1)
         pdf.cell(w=30, h=8, txt=str(row['amount_purchased']), border=1)
         pdf.cell(w=30, h=8, txt=str(row['price_per_unit']), border=1)
-        pdf.cell(w=30, h=8, txt=str(row['total_price']), border=1,ln=1)
+        pdf.cell(w=30, h=8, txt=str(row['total_price']), border=1, ln=1)
         # Incrementing the total according to each iterations total price
         total += row['total_price']
 
@@ -65,5 +65,12 @@ for filePath in filePaths:
     pdf.set_font(family='Times', size=10)
     pdf.cell(w=30, h=8, txt=f" Company Name is ABCD INC", ln=1)
 
+    # content = """
+    #    Lorem ipsum dolor sit amet, consectetur adipiscing
+    #    elit, sed do eiusmod tempor incididunt ut labore
+    #    et dolore magna aliqua. Ut enim ad minim veniam,
+    #    quis nostrud exercitation ullamco.
+    #    """
+    # pdf.multi_cell(w=100, h=8, txt=content)
 
     pdf.output(f"PDFs/{fileName}.pdf")
